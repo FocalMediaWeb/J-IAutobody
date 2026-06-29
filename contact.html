@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact J&I Auto Body — 1325 Harrisburg Ave, Lancaster, PA 17603. Call (717) 875-7218 or email jandiautobody23@gmail.com for a free estimate.">
+  <title>Contact — J&I Auto Body</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-page {
+      padding: 5rem 0 6rem;
+      background: var(--c-white);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3.5rem;
+    }
+
+    /* Left: info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .contact-block h3 {
+      font-family: var(--f-heading);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-block-value {
+      font-family: var(--f-display);
+      font-size: 2.25rem;
+      color: var(--c-black);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      display: block;
+      transition: color var(--transition);
+    }
+
+    a.contact-block-value:hover { color: var(--c-orange); }
+
+    .contact-block-sub {
+      font-size: 0.875rem;
+      color: var(--c-gray-400);
+      margin-top: 0.25rem;
+    }
+
+    .contact-block-email {
+      font-family: var(--f-heading);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--c-black);
+      letter-spacing: 0.02em;
+      display: block;
+      margin-top: 0.15rem;
+      transition: color var(--transition);
+      word-break: break-all;
+    }
+
+    a.contact-block-email:hover { color: var(--c-orange); }
+
+    .contact-block-address {
+      font-size: 1rem;
+      color: var(--c-gray-600);
+      line-height: 1.7;
+      margin-top: 0.15rem;
+    }
+
+    /* Hours */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid var(--c-gray-100);
+    }
+
+    .hours-table tr:last-child { border-bottom: none; }
+
+    .hours-table td {
+      padding: 0.6rem 0;
+      font-size: 0.9rem;
+      color: var(--c-gray-600);
+    }
+
+    .hours-table td:first-child {
+      font-weight: 500;
+      color: var(--c-black);
+      width: 45%;
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+    }
+
+    .hours-note {
+      font-size: 0.8rem;
+      color: var(--c-gray-400);
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    /* Right: map + photo */
+    .contact-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-map {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--c-gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .contact-shop-photo {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-shop-photo .photo-placeholder {
+      width: 100%;
+      height: 100%;
+    }
+
+    .contact-directions {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--f-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+      margin-top: 0.25rem;
+      transition: color var(--transition);
+    }
+
+    .contact-directions:hover { color: var(--c-orange-hover); }
+
+    .contact-directions::before {
+      content: '↗';
+      font-style: normal;
+    }
+
+    /* Divider */
+    .contact-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--c-gray-100);
+    }
+
+    /* Google review strip */
+    .review-strip {
+      background: var(--c-gray-100);
+      padding: 3.5rem 0;
+    }
+
+    .review-strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .review-score {
+      text-align: center;
+    }
+
+    .review-score-num {
+      font-family: var(--f-display);
+      font-size: 5rem;
+      color: var(--c-black);
+      line-height: 1;
+    }
+
+    .review-score-stars {
+      font-size: 1.5rem;
+      color: #FBBC05;
+      letter-spacing: 3px;
+      display: block;
+      margin: 0.25rem 0;
+    }
+
+    .review-score-label {
+      font-family: var(--f-heading);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-gray-400);
+    }
+
+    .review-divider-v {
+      width: 1px;
+      height: 80px;
+      background: var(--c-gray-200);
+    }
+
+    .review-text-block {
+      max-width: 420px;
+    }
+
+    .review-text-block h3 {
+      font-family: var(--f-display);
+      font-size: 2rem;
+      color: var(--c-black);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .review-text-block p {
+      font-size: 0.9rem;
+      color: var(--c-gray-600);
+      line-height: 1.7;
+    }
+
+    .review-text-block a {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--f-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .review-divider-v { display: none; }
+      .review-strip-inner { flex-direction: column; text-align: center; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="J&I Auto Body home">
+        <img src="banner.png" alt="J&I Auto Body" style="height:52px;width:auto;display:block;">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="tel:+17178757218" class="nav-cta">Call Us</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero-slash" aria-hidden="true"></div>
+      <div class="container page-hero-inner">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h1 id="page-title">Contact Us</h1>
+        <p>Stop in or call — we'll give you a straight estimate at no charge.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT MAIN -->
+    <section class="contact-page" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <div class="contact-layout">
+
+          <!-- LEFT: Contact details -->
+          <div class="contact-info reveal">
+
+            <div class="contact-block">
+              <h3>Phone</h3>
+              <a href="tel:+17178757218" class="contact-block-value">(717) 875-7218</a>
+              <p class="contact-block-sub">Call or text to schedule a free estimate</p>
+            </div>
+
+            <div class="contact-divider"></div>
+
+            <div class="contact-block">
+              <h3>Email</h3>
+              <a href="mailto:jandiautobody23@gmail.com" class="contact-block-email">jandiautobody23@gmail.com</a>
+            </div>
+
+            <div class="contact-divider"></div>
+
+            <div class="contact-block">
+              <h3>Location</h3>
+              <address class="contact-block-address" style="font-style:normal;">
+                1325 Harrisburg Ave<br>
+                Lancaster, PA 17603
+              </address>
+              <a href="https://maps.google.com/?q=1325+Harrisburg+Ave+Lancaster+PA+17603" target="_blank" rel="noopener noreferrer" class="contact-directions">
+                Get Directions
+              </a>
+            </div>
+
+            <div class="contact-divider"></div>
+
+            <div class="contact-block">
+              <h3>Hours</h3>
+              <table class="hours-table" aria-label="Business hours">
+                <tbody>
+                  <tr><td>Monday – Friday</td><td>9:00 AM – 5:00 PM</td></tr>
+                  <tr><td>Saturday</td><td>9:00 AM – 12:00 PM</td></tr>
+                  <tr><td>Sunday</td><td>Closed</td></tr>
+                </tbody>
+              </table>
+              <p class="hours-note">Hours may vary — call ahead to confirm.</p>
+            </div>
+
+          </div>
+
+          <!-- RIGHT: Map + shop photo -->
+          <div class="contact-visual reveal reveal-delay-2">
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.3!2d-76.3287!3d40.0356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c624b8d0d0d0d0%3A0x0!2s1325+Harrisburg+Ave%2C+Lancaster%2C+PA+17603!5e0!3m2!1sen!2sus!4v1"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="J&I Auto Body location map"
+              ></iframe>
+            </div>
+            <div class="contact-shop-photo">
+              <img src="shop.png" alt="J&I Auto Body shop exterior at 1325 Harrisburg Ave, Lancaster PA" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GOOGLE REVIEW STRIP -->
+    <section class="review-strip" aria-labelledby="reviews-heading">
+      <div class="container review-strip-inner">
+        <div class="review-score">
+          <div class="review-score-num" aria-label="Rating: 5.0 out of 5">5.0</div>
+          <span class="review-score-stars" aria-hidden="true">★★★★★</span>
+          <span class="review-score-label">122 Google Reviews</span>
+        </div>
+        <div class="review-divider-v" aria-hidden="true"></div>
+        <div class="review-text-block">
+          <h3 id="reviews-heading">See Why Lancaster<br>Trusts J&amp;I</h3>
+          <p>Over 122 customers have left 5-star reviews on Google. We earn that by doing the work right the first time and standing behind it. Read what our customers say before you decide.</p>
+          <a href="https://www.google.com/search?q=J%26I+Auto+Body+Lancaster+PA+reviews" target="_blank" rel="noopener noreferrer">
+            Read Our Reviews on Google
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="cta-band-slash" aria-hidden="true"></div>
+      <div class="container cta-band-inner">
+        <div class="cta-band-text">
+          <h2 id="cta-heading">Ready to Get<br>Started?</h2>
+          <p>Free estimates, no pressure, no runaround.</p>
+        </div>
+        <div>
+          <a href="tel:+17178757218" class="cta-band-phone">(717) 875-7218</a>
+          <span class="cta-band-sub">1325 Harrisburg Ave · Lancaster, PA 17603</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-mark">
+            <span class="logo-ji">J<span class="logo-amp">&</span>I</span>
+            <span class="logo-autobody">Auto Body</span>
+          </div>
+          <p class="footer-tagline">Expert auto body repair and custom finishing in Lancaster, PA. 14+ years of making cars look their best.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <div class="footer-contact-item">
+            <div><strong><a href="tel:+17178757218">(717) 875-7218</a></strong></div>
+          </div>
+          <div class="footer-contact-item">
+            <div><strong><a href="mailto:jandiautobody23@gmail.com">jandiautobody23@gmail.com</a></strong></div>
+          </div>
+          <div class="footer-contact-item">
+            <div>1325 Harrisburg Ave<br>Lancaster, PA 17603</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 J&amp;I Auto Body. All rights reserved.</p>
+        <div class="footer-reviews">
+          <span class="stars">★★★★★</span>
+          <span>122 reviews on Google</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('open', !expanded);
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
