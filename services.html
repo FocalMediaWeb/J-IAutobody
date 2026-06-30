@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="J&I Auto Body services in Lancaster, PA — body & trim, painting, paintless dent removal, decals, pin stripes, fiberglass repair, wheel painting, and headlight restoration.">
+  <title>Services — J&I Auto Body</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .services-page-grid {
+      padding: 5rem 0;
+      background: var(--c-white);
+    }
+
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--c-gray-200);
+      border: 1px solid var(--c-gray-200);
+      margin-top: 3rem;
+    }
+
+    .service-full-card {
+      background: var(--c-white);
+      padding: 3rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: background var(--transition);
+    }
+
+    .service-full-card:hover {
+      background: var(--c-off-white);
+    }
+
+    .service-full-card::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 0;
+      background: var(--c-orange);
+      transition: height 0.35s ease;
+    }
+
+    .service-full-card:hover::after {
+      height: 100%;
+    }
+
+    .service-num-big {
+      font-family: var(--f-display);
+      font-size: 5rem;
+      color: var(--c-orange);
+      line-height: 1;
+      min-width: 3rem;
+      text-align: right;
+    }
+
+    .service-detail h2 {
+      font-family: var(--f-display);
+      font-size: 2rem;
+      color: var(--c-black);
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-detail p {
+      font-size: 0.95rem;
+      color: var(--c-gray-600);
+      line-height: 1.7;
+      max-width: 420px;
+    }
+
+    .service-detail-tag {
+      display: inline-block;
+      font-family: var(--f-heading);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+      background: rgba(224, 85, 0, 0.08);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-top: 1rem;
+    }
+
+    .services-photo-break {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 480px;
+      gap: 4px;
+      overflow: hidden;
+    }
+
+    .services-photo-break img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+
+    .free-estimate-strip {
+      background: transparent;
+      padding: 0;
+      margin-top: -120px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .free-estimate-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: var(--c-white);
+      border-left: 4px solid var(--c-orange);
+      padding: 2.5rem 3rem;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.15);
+    }
+
+    .free-estimate-inner h2 {
+      font-family: var(--f-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--c-black);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .free-estimate-inner p {
+      font-size: 0.95rem;
+      color: var(--c-gray-600);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .services-full-grid { grid-template-columns: 1fr; }
+      .service-full-card { grid-template-columns: 1fr; gap: 0.5rem; }
+      .service-num-big { font-size: 2.5rem; text-align: left; }
+      .services-photo-break { grid-template-columns: 1fr 1fr; height: auto; }
+      .services-photo-break .photo-placeholder { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="J&I Auto Body home">
+        <img src="banner.png" alt="J&I Auto Body" style="height:52px;width:auto;display:block;">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:+17178757218" class="nav-cta">Call Us</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero-slash" aria-hidden="true"></div>
+      <div class="container page-hero-inner">
+        <p class="section-eyebrow">What We Offer</p>
+        <h1 id="page-title">Our Services</h1>
+        <p>Eight services, one shop. Everything your car needs to look its best.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES FULL GRID -->
+    <section class="services-page-grid" aria-labelledby="services-list-heading">
+      <div class="container">
+        <div class="services-full-grid" role="list">
+
+          <article class="service-full-card reveal" role="listitem">
+            <span class="service-num-big" aria-hidden="true">01</span>
+            <div class="service-detail">
+              <h2>Body &amp; Trim</h2>
+              <p>Collision damage, rust repair, panel replacement, and trim restoration — we handle everything from fender benders to more serious structural work. We prep and finish every surface properly so the repair holds and looks right for years.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Collision damage and panel replacement</li>
+                <li>Rust repair and surface preparation</li>
+                <li>Trim, molding, and door handle restoration</li>
+              </ul>
+              <span class="service-detail-tag">Collision Repair</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal reveal-delay-1" role="listitem">
+            <span class="service-num-big" aria-hidden="true">02</span>
+            <div class="service-detail">
+              <h2>Painting</h2>
+              <p>Whether it's a single panel or a full vehicle respray, we mix and match your exact color code for a seamless result. We use quality automotive paint with proper clear-coat protection so the finish looks factory-fresh and resists fading.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Full respray matched to factory color code</li>
+                <li>Spot and panel painting with color blending</li>
+                <li>Clear-coat protection for lasting finish</li>
+              </ul>
+              <span class="service-detail-tag">Color Matching</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal" role="listitem">
+            <span class="service-num-big" aria-hidden="true">03</span>
+            <div class="service-detail">
+              <h2>Paintless Dent Removal</h2>
+              <p>Hail damage, parking lot dings, and minor dents can often be removed without any paint work at all. Our PDR process massages the metal back into shape from behind the panel, preserving your factory finish completely.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Hail damage on roofs, hoods, and panels</li>
+                <li>Door dings and parking lot dents</li>
+                <li>No filler, no repainting — original finish preserved</li>
+              </ul>
+              <span class="service-detail-tag">No Paint Required</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal reveal-delay-1" role="listitem">
+            <span class="service-num-big" aria-hidden="true">04</span>
+            <div class="service-detail">
+              <h2>Decals</h2>
+              <p>From business lettering to full-panel graphics, we cut and install vinyl decals cleanly and precisely. We take the time to get alignment right so the result looks intentional, not applied.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Custom vinyl graphics and lettering</li>
+                <li>Fleet and commercial vehicle branding</li>
+                <li>Precise installation and alignment</li>
+              </ul>
+              <span class="service-detail-tag">Custom Vinyl</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal" role="listitem">
+            <span class="service-num-big" aria-hidden="true">05</span>
+            <div class="service-detail">
+              <h2>Pin Stripes</h2>
+              <p>A pin stripe done right is a clean, thin accent that makes the lines of a vehicle pop. We apply pinstriping by tape or by hand, to your choice of width and color. It's a small detail that makes a big difference.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Hand-applied or tape pinstripe work</li>
+                <li>Single and multi-color stripe options</li>
+                <li>Any vehicle type or body style</li>
+              </ul>
+              <span class="service-detail-tag">Detailing</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal reveal-delay-1" role="listitem">
+            <span class="service-num-big" aria-hidden="true">06</span>
+            <div class="service-detail">
+              <h2>Fiberglass Repair</h2>
+              <p>Cracked bumpers, fiberglass body kits, and composite panels require a different approach than sheet metal. We rebuild damaged fiberglass to the original contour and finish it so the repair is invisible.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Cracks, chips, and breaks fully rebuilt</li>
+                <li>Bumpers, body kits, and custom panels</li>
+                <li>Finished to match surrounding paint exactly</li>
+              </ul>
+              <span class="service-detail-tag">Composite &amp; Bumpers</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal" role="listitem">
+            <span class="service-num-big" aria-hidden="true">07</span>
+            <div class="service-detail">
+              <h2>Wheel Painting</h2>
+              <p>Curb rash is one of the most common cosmetic problems on any car. We repair the damage, prep the wheel properly, and respray it in the color and finish of your choice — gloss, satin, matte, or custom.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Curb rash and scuff repair</li>
+                <li>Custom color refinish in any finish type</li>
+                <li>Gloss, satin, matte — your choice</li>
+              </ul>
+              <span class="service-detail-tag">Custom Finish</span>
+            </div>
+          </article>
+
+          <article class="service-full-card reveal reveal-delay-1" role="listitem">
+            <span class="service-num-big" aria-hidden="true">08</span>
+            <div class="service-detail">
+              <h2>Headlight Restoration</h2>
+              <p>Cloudy, yellowed headlights cut your night visibility and make the car look older than it is. We sand, polish, and apply a UV-protective seal so your lenses come out crystal clear and stay that way.</p>
+              <ul class="service-card-bullets" style="margin-top:1rem;">
+                <li>Removes yellowing and hazing from lenses</li>
+                <li>UV sealant to prevent quick re-clouding</li>
+                <li>Improves nighttime visibility and appearance</li>
+              </ul>
+              <span class="service-detail-tag">Visibility &amp; Appearance</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO BREAK -->
+    <div class="services-photo-break" aria-label="Work photos">
+      <img src="work1.jpg" alt="Car masked for painting" loading="lazy">
+      <img src="work2.jpg" alt="SUV prepped for paint" loading="lazy">
+      <img src="work3.jpg" alt="Panel masking in progress" loading="lazy">
+      <img src="work4.jpg" alt="Sedan mid paint job" loading="lazy">
+    </div>
+
+    <!-- FREE ESTIMATE STRIP -->
+    <section class="free-estimate-strip" aria-labelledby="estimate-heading">
+      <div class="container free-estimate-inner">
+        <div>
+          <h2 id="estimate-heading">Not sure what you need?<br>We'll take a look — free.</h2>
+          <p>Stop by 1325 Harrisburg Ave or give us a call and we'll tell you exactly what it'll take.</p>
+        </div>
+        <div style="display:flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="tel:+17178757218" class="btn btn-primary">Call (717) 875-7218</a>
+          <a href="contact.html" class="btn btn-dark">Find Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="cta-band-slash" aria-hidden="true"></div>
+      <div class="container cta-band-inner">
+        <div class="cta-band-text">
+          <h2 id="cta-heading">Ready to Get<br>Your Car Fixed?</h2>
+          <p>Call or stop in — we'll give you a straight estimate with no pressure.</p>
+        </div>
+        <div>
+          <a href="tel:+17178757218" class="cta-band-phone">(717) 875-7218</a>
+          <span class="cta-band-sub">1325 Harrisburg Ave · Lancaster, PA 17603</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-mark">
+            <span class="logo-ji">J<span class="logo-amp">&</span>I</span>
+            <span class="logo-autobody">Auto Body</span>
+          </div>
+          <p class="footer-tagline">Expert auto body repair and custom finishing in Lancaster, PA. 14+ years of making cars look their best.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <div class="footer-contact-item">
+            <div><strong><a href="tel:+17178757218">(717) 875-7218</a></strong></div>
+          </div>
+          <div class="footer-contact-item">
+            <div><strong><a href="mailto:jandiautobody23@gmail.com">jandiautobody23@gmail.com</a></strong></div>
+          </div>
+          <div class="footer-contact-item">
+            <div>1325 Harrisburg Ave<br>Lancaster, PA 17603</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 J&amp;I Auto Body. All rights reserved.</p>
+        <div class="footer-reviews">
+          <span class="stars">★★★★★</span>
+          <span>122 reviews on Google</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta-bar" aria-label="Call for free estimate">
+    <a href="tel:+17178757218">Call for a Free Estimate &nbsp;·&nbsp; (717) 875-7218</a>
+  </div>
+
+  <script>
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('open', !expanded);
+    });
+
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
