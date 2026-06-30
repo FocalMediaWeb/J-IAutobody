@@ -386,6 +386,98 @@
       </div>
     </section>
 
+    <!-- ESTIMATE FORM -->
+    <section class="estimate-section" aria-labelledby="estimate-heading">
+      <div class="container">
+        <p class="section-eyebrow" style="color:var(--c-orange);">Free Estimate</p>
+        <h2 class="section-title section-title--light" id="estimate-heading">Request a<br>Free Estimate</h2>
+        <div class="estimate-layout">
+          <div class="estimate-info">
+            <p>Not sure what it'll cost? Send us your info and a quick description — or text photos to <strong style="color:var(--c-white);">(717) 875-7218</strong> — and we'll get back to you fast.</p>
+            <p style="margin-top:1rem;">You can also stop by the shop any time during business hours. No appointment needed.</p>
+            <div class="estimate-contact-links">
+              <a href="tel:+17178757218" class="estimate-contact-link"><span>📞</span> (717) 875-7218</a>
+              <a href="mailto:jandiautobody23@gmail.com" class="estimate-contact-link"><span>✉</span> jandiautobody23@gmail.com</a>
+              <a href="https://maps.google.com/?q=1325+Harrisburg+Ave+Lancaster+PA+17603" target="_blank" rel="noopener noreferrer" class="estimate-contact-link"><span>📍</span> 1325 Harrisburg Ave, Lancaster PA</a>
+            </div>
+          </div>
+          <form class="estimate-form" action="mailto:jandiautobody23@gmail.com" method="post" enctype="text/plain" aria-label="Request a free estimate">
+            <div class="form-group">
+              <label class="form-label" for="est-name">Your Name</label>
+              <input class="form-input" type="text" id="est-name" name="Name" placeholder="First and last name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="est-phone">Phone Number</label>
+              <input class="form-input" type="tel" id="est-phone" name="Phone" placeholder="(717) 000-0000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="est-email">Email Address</label>
+              <input class="form-input" type="email" id="est-email" name="Email" placeholder="you@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="est-vehicle">Vehicle (Year, Make, Model)</label>
+              <input class="form-input" type="text" id="est-vehicle" name="Vehicle" placeholder="e.g. 2018 Honda Accord">
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="est-service">Service Needed</label>
+              <select class="form-select" id="est-service" name="Service">
+                <option value="" disabled selected>Select a service...</option>
+                <option>Body &amp; Trim Repair</option>
+                <option>Painting / Respray</option>
+                <option>Paintless Dent Removal</option>
+                <option>Collision Repair</option>
+                <option>Decals</option>
+                <option>Pin Stripes</option>
+                <option>Fiberglass Repair</option>
+                <option>Wheel Painting</option>
+                <option>Headlight Restoration</option>
+                <option>Not Sure / Multiple</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" for="est-message">Describe the Damage or Work Needed</label>
+              <textarea class="form-textarea" id="est-message" name="Message" placeholder="Tell us what happened or what you'd like done..."></textarea>
+            </div>
+            <div class="form-upload" role="button" tabindex="0" aria-label="Photo upload placeholder">
+              📷 &nbsp; You can text or email photos directly — (717) 875-7218 or jandiautobody23@gmail.com
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send Estimate Request</button>
+              <a href="tel:+17178757218" class="btn btn-ghost">Or Call Us Directly</a>
+            </div>
+            <p class="form-note">Submitting opens your email app. You can also call or text us directly — whichever is easier.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section class="service-area" aria-labelledby="area-heading">
+      <div class="container">
+        <div class="area-inner">
+          <div class="area-text">
+            <p class="section-eyebrow">Where We Serve</p>
+            <h2 class="section-title" id="area-heading" style="font-size:clamp(1.75rem,3vw,2.5rem);">Lancaster &amp;<br>Surrounding Areas</h2>
+            <p>J&I Auto Body is located in Lancaster, PA and serves drivers from across Lancaster County and the surrounding region. If you're nearby, come see us.</p>
+          </div>
+          <div class="area-tags" role="list" aria-label="Service areas">
+            <span class="area-tag" role="listitem">Lancaster, PA</span>
+            <span class="area-tag" role="listitem">Lititz</span>
+            <span class="area-tag" role="listitem">Manheim</span>
+            <span class="area-tag" role="listitem">Mount Joy</span>
+            <span class="area-tag" role="listitem">Elizabethtown</span>
+            <span class="area-tag" role="listitem">Millersville</span>
+            <span class="area-tag" role="listitem">Columbia</span>
+            <span class="area-tag" role="listitem">Ephrata</span>
+            <span class="area-tag" role="listitem">Strasburg</span>
+            <span class="area-tag" role="listitem">Quarryville</span>
+            <span class="area-tag" role="listitem">East Petersburg</span>
+            <span class="area-tag" role="listitem">Lancaster County</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA BAND -->
     <section class="cta-band" aria-labelledby="cta-heading">
       <div class="cta-band-slash" aria-hidden="true"></div>
@@ -445,6 +537,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta-bar" aria-label="Call for free estimate">
+    <a href="tel:+17178757218">Call for a Free Estimate &nbsp;·&nbsp; (717) 875-7218</a>
+  </div>
 
   <script>
     const nav = document.getElementById('site-nav');

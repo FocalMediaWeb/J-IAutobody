@@ -208,6 +208,8 @@
         flex-direction: column;
         align-items: stretch;
         min-height: auto;
+        position: relative;
+        top: auto;
       }
       .hero-content {
         order: 1;
@@ -229,12 +231,14 @@
       }
       .hero-car-img { display: none; }
       .hero-reviews-strip { display: none; }
-      .hero-map-wrap { flex: none; height: 280px; min-height: 0; }
+      .hero-map-wrap { flex: none; height: 300px; min-height: 0; }
       .hero-badge { display: none; }
     }
 
-    .hero { position: sticky; top: 0; z-index: 1; }
-    .hero-scroll-cover { position: relative; z-index: 2; box-shadow: 0 -6px 30px rgba(0,0,0,0.18); }
+    @media (min-width: 769px) {
+      .hero { position: sticky; top: 0; z-index: 1; }
+      .hero-scroll-cover { position: relative; z-index: 2; box-shadow: 0 -6px 30px rgba(0,0,0,0.18); }
+    }
     .trust-bar { border-top: 1px solid rgba(224,85,0,0.25); }
 
     /* Testimonials */
@@ -366,7 +370,7 @@
           <p class="hero-eyebrow">Lancaster, PA · Since 2010</p>
           <img src="logo3.png" alt="J&I Auto Body" class="hero-logo-img">
           <p class="hero-tagline">
-            <strong>Expert collision repair and custom finishing</strong> — from dent removal to full paint jobs, we treat every car like our own.
+            Collision repair · Paint work · Dent removal · Trim · Wheels · Headlights. <strong>Lancaster's trusted auto body shop</strong> — rated 5 stars by 122+ customers.
           </p>
           <div class="hero-actions">
             <a href="tel:+17178757218" class="btn btn-primary">
@@ -434,42 +438,116 @@
             <span class="service-card-num" aria-hidden="true">01</span>
             <h3 class="service-card-name">Body &amp; Trim</h3>
             <p class="service-card-desc">Collision damage, rust repair, panel replacement, and trim restoration.</p>
+            <ul class="service-card-bullets">
+              <li>Collision damage and panel replacement</li>
+              <li>Rust repair and surface restoration</li>
+              <li>Trim and molding repair or replacement</li>
+            </ul>
           </article>
           <article class="service-card reveal reveal-delay-1" role="listitem">
             <span class="service-card-num" aria-hidden="true">02</span>
             <h3 class="service-card-name">Painting</h3>
             <p class="service-card-desc">Full respray and spot painting matched precisely to your vehicle's color code.</p>
+            <ul class="service-card-bullets">
+              <li>Full respray matched to factory color code</li>
+              <li>Spot painting for panels, bumpers, and doors</li>
+              <li>Color blending for a seamless factory finish</li>
+            </ul>
           </article>
           <article class="service-card reveal reveal-delay-2" role="listitem">
             <span class="service-card-num" aria-hidden="true">03</span>
             <h3 class="service-card-name">Paintless Dent Removal</h3>
             <p class="service-card-desc">Hail damage and minor dents removed without disturbing the factory finish.</p>
+            <ul class="service-card-bullets">
+              <li>Hail damage on roofs, hoods, and panels</li>
+              <li>Door dings without repainting</li>
+              <li>No filler — original finish preserved</li>
+            </ul>
           </article>
           <article class="service-card reveal reveal-delay-3" role="listitem">
             <span class="service-card-num" aria-hidden="true">04</span>
             <h3 class="service-card-name">Decals</h3>
             <p class="service-card-desc">Custom vinyl decals installed cleanly, aligned to your spec.</p>
+            <ul class="service-card-bullets">
+              <li>Custom vinyl graphics and lettering</li>
+              <li>Fleet and commercial vehicle branding</li>
+              <li>Clean installation, aligned to your spec</li>
+            </ul>
           </article>
           <article class="service-card reveal" role="listitem">
             <span class="service-card-num" aria-hidden="true">05</span>
             <h3 class="service-card-name">Pin Stripes</h3>
             <p class="service-card-desc">Hand-applied or taped pinstriping to give your vehicle a distinctive look.</p>
+            <ul class="service-card-bullets">
+              <li>Hand-applied or taped stripe work</li>
+              <li>Single and multi-color options</li>
+              <li>Works on any vehicle type or body style</li>
+            </ul>
           </article>
           <article class="service-card reveal reveal-delay-1" role="listitem">
             <span class="service-card-num" aria-hidden="true">06</span>
             <h3 class="service-card-name">Fiberglass Repair</h3>
             <p class="service-card-desc">Cracks, chips, and structural fiberglass damage restored to like-new condition.</p>
+            <ul class="service-card-bullets">
+              <li>Cracks, chips, and breaks fully restored</li>
+              <li>Bumpers, body kits, and custom panels</li>
+              <li>Finished to match surrounding paint exactly</li>
+            </ul>
           </article>
           <article class="service-card reveal reveal-delay-2" role="listitem">
             <span class="service-card-num" aria-hidden="true">07</span>
             <h3 class="service-card-name">Wheel Painting</h3>
             <p class="service-card-desc">Curb rash repair and custom wheel painting in any color or finish.</p>
+            <ul class="service-card-bullets">
+              <li>Curb rash and scuff repair</li>
+              <li>Custom color or full refinish</li>
+              <li>Gloss, matte, or satin — your choice</li>
+            </ul>
           </article>
           <article class="service-card reveal reveal-delay-3" role="listitem">
             <span class="service-card-num" aria-hidden="true">08</span>
             <h3 class="service-card-name">Headlight Restoration</h3>
             <p class="service-card-desc">Yellowed or foggy lenses polished and sealed — better visibility, better look.</p>
+            <ul class="service-card-bullets">
+              <li>Removes yellowing and hazing from lenses</li>
+              <li>UV sealant applied to prevent re-clouding</li>
+              <li>Improves visibility and appearance</li>
+            </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" aria-labelledby="hiw-heading">
+      <div class="container">
+        <p class="section-eyebrow" style="color:var(--c-orange);">The Process</p>
+        <h2 class="section-title section-title--light" id="hiw-heading">What Happens<br>When You Come In</h2>
+        <div class="hiw-grid">
+          <div class="hiw-step reveal">
+            <div class="hiw-step-badge">1</div>
+            <h3 class="hiw-step-title">Send Photos or Stop By</h3>
+            <p class="hiw-step-desc">Text or email us photos of the damage, or bring the vehicle in. No appointment needed for an estimate — just show up.</p>
+            <span class="hiw-step-num" aria-hidden="true">1</span>
+          </div>
+          <div class="hiw-step reveal reveal-delay-1">
+            <div class="hiw-step-badge">2</div>
+            <h3 class="hiw-step-title">Get a Straight Estimate</h3>
+            <p class="hiw-step-desc">Luis looks it over and gives you a clear, honest number. No surprises, no pressure. We'll walk you through exactly what needs to be done.</p>
+            <span class="hiw-step-num" aria-hidden="true">2</span>
+          </div>
+          <div class="hiw-step reveal reveal-delay-2">
+            <div class="hiw-step-badge">3</div>
+            <h3 class="hiw-step-title">We Repair, Paint &amp; Finish It Right</h3>
+            <p class="hiw-step-desc">Once you give the go-ahead, we get to work. Color-matched paint, proper bodywork, and a clean finish — every time.</p>
+            <span class="hiw-step-num" aria-hidden="true">3</span>
+          </div>
+          <div class="hiw-step reveal reveal-delay-3">
+            <div class="hiw-step-badge">4</div>
+            <h3 class="hiw-step-title">Pick Up a Car That Looks Right Again</h3>
+            <p class="hiw-step-desc">We'll let you know when it's ready. Your vehicle comes back clean and looking the way it should — or better.</p>
+            <span class="hiw-step-num" aria-hidden="true">4</span>
+          </div>
         </div>
       </div>
     </section>
@@ -556,6 +634,80 @@
       </div>
     </section>
 
+    <!-- WHY CHOOSE -->
+    <section class="why-choose" aria-labelledby="why-heading">
+      <div class="container">
+        <p class="section-eyebrow">Why J&amp;I</p>
+        <h2 class="section-title" id="why-heading">Why Lancaster Chooses<br>J&amp;I Auto Body</h2>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <span class="why-card-icon">🎨</span>
+            <h3 class="why-card-title">Color-Matched Paint Work</h3>
+            <p class="why-card-desc">Every paint job is matched precisely to your vehicle's factory color code. We blend and finish so repairs are invisible — not just covered up.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <span class="why-card-icon">📋</span>
+            <h3 class="why-card-title">Honest, Upfront Estimates</h3>
+            <p class="why-card-desc">Luis tells you exactly what it'll cost before anything starts. We stick to the estimate. No hidden charges, no surprises at pickup.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <span class="why-card-icon">🔧</span>
+            <h3 class="why-card-title">Collision, Cosmetic &amp; Custom Work</h3>
+            <p class="why-card-desc">From accident repairs to full custom paint jobs, we handle the full range — body work, trim, decals, wheels, headlights, fiberglass, and more.</p>
+          </div>
+          <div class="why-card reveal">
+            <span class="why-card-icon">📍</span>
+            <h3 class="why-card-title">Local Lancaster Shop</h3>
+            <p class="why-card-desc">We're not a chain. J&I is a local shop in Lancaster, PA — you deal directly with Luis and the team, not a front desk or call center.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <span class="why-card-icon">⭐</span>
+            <h3 class="why-card-title">122 Five-Star Google Reviews</h3>
+            <p class="why-card-desc">Over 122 customers have left 5-star reviews on Google. That's not luck — it's what happens when you do the work right and treat people fairly.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <span class="why-card-icon">🚗</span>
+            <h3 class="why-card-title">14+ Years of Experience</h3>
+            <p class="why-card-desc">J&I Auto Body has been fixing cars in Lancaster since 2010. We've seen every type of damage and know how to make it right the first time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="container">
+        <p class="section-eyebrow">Common Questions</p>
+        <h2 class="section-title" id="faq-heading">Frequently Asked<br>Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item reveal">
+            <p class="faq-q">Do I need an appointment for an estimate?</p>
+            <p class="faq-a">No appointment needed. Stop by during business hours and we'll take a look at your vehicle and give you a free, straightforward estimate on the spot.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-1">
+            <p class="faq-q">Can you match my vehicle's paint color?</p>
+            <p class="faq-a">Yes. We use your vehicle's factory color code to mix and match paint precisely. Spot repairs are blended into surrounding panels so the result looks factory-original.</p>
+          </div>
+          <div class="faq-item reveal">
+            <p class="faq-q">How long does a typical repair take?</p>
+            <p class="faq-a">It depends on the work involved. Minor repairs may be done in a day or two. Larger jobs like full resprays or significant collision damage may take longer — we'll give you a timeline with the estimate.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-1">
+            <p class="faq-q">Can I send photos before coming in?</p>
+            <p class="faq-a">Absolutely. Text or email us photos of the damage and we can give you a rough idea of what's involved. It's a good way to start before making the drive over.</p>
+          </div>
+          <div class="faq-item reveal">
+            <p class="faq-q">Do you repair bumpers, trim, and body panels?</p>
+            <p class="faq-a">Yes — bumpers, doors, quarter panels, fenders, trim, and more. Whether it's from a collision or just wear over time, we handle all body and trim repairs.</p>
+          </div>
+          <div class="faq-item reveal reveal-delay-1">
+            <p class="faq-q">Do you work with insurance claims?</p>
+            <p class="faq-a">We recommend calling the shop directly to discuss your situation. Every insurance claim is different, and Luis can help you understand your options and the best next step.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA BAND -->
     <section class="cta-band" aria-labelledby="cta-heading">
       <div class="cta-band-slash" aria-hidden="true"></div>
@@ -622,6 +774,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta-bar" aria-label="Call for free estimate">
+    <a href="tel:+17178757218">Call for a Free Estimate &nbsp;·&nbsp; (717) 875-7218</a>
+  </div>
 
   <script>
     if (history.scrollRestoration) history.scrollRestoration = 'manual';
